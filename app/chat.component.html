@@ -1,0 +1,15 @@
+<div>
+  Chat app
+  <button (click)="logout()">Log out</button>
+</div>
+<div>
+  <div *ngFor="let message of messages">
+    {{ message.user.username }}:
+    {{ message.body }}
+  </div>
+</div>
+<div>
+  <form (submit)="send()">
+    <input type="text" [(ngModel)]="message" name="message" /> <input type="submit" value="Send" [disabled]="!message" />
+  </form>
+</div>

@@ -1,0 +1,32 @@
+{
+  "name": "chat-client",
+  "version": "1.0.0",
+  "description": "Simple chat client.",
+  "keywords": [],
+  "author": "Sigmund Burgos <sigmund.burgos@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsc && node-sass -r ./app -o public/assets/css && concurrently \"tsc -w\" \"node-sass -r -w ./app -o public/assets/css\" \"lite-server\""
+  },
+  "dependencies": {
+    "@angular/common": "~2.4.0",
+    "@angular/compiler": "~2.4.0",
+    "@angular/core": "~2.4.0",
+    "@angular/forms": "~2.4.0",
+    "@angular/http": "~2.4.0",
+    "@angular/platform-browser": "~2.4.0",
+    "@angular/platform-browser-dynamic": "~2.4.0",
+    "@angular/router": "~3.4.0",
+    "core-js": "^2.4.1",
+    "node-sass": "^4.3.0",
+    "rxjs": "5.0.1",
+    "socket.io-client": "^1.7.2",
+    "systemjs": "0.19.40",
+    "zone.js": "^0.7.4"
+  },
+  "devDependencies": {
+    "concurrently": "^3.1.0",
+    "fs-extra": "^1.0.0"
+  },
+  "repository": {}
+}
