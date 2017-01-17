@@ -11,6 +11,7 @@ import { AuthService } from './auth.service';
 export class LoginComponent implements OnInit {
   username: string;
   password: string;
+  error: boolean = false;
 
   constructor(private router: Router, private auth: AuthService) { }
 
@@ -38,7 +39,10 @@ export class LoginComponent implements OnInit {
         }
         else {
           // show errors
-          console.log('error');
+          this.error = true;
+          setTimeout(() => {
+            this.error = false;
+          }, 2000);
         }
       });
   }

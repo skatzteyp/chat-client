@@ -1,19 +1,19 @@
-<div class="header text-large">
-  Chat app
+<div class="header text-large text-center">
+  <b>Chat app</b>
 </div>
-<form (submit)="login()">
-  <p>Username</p>
-  <div>
-    <input type="text" [(ngModel)]="username" name="username" />
+<form class="login-form" (submit)="login()">
+  <div class="has-error">
+    <input type="text" [(ngModel)]="username" name="username" class="input textbox rounded" placeholder="Username" />
+    <div *ngIf="error" class="error">Please enter a valid value.</div>
   </div>
-  <p>Password</p>
-  <div>
-    <input type="password" [(ngModel)]="password" name="password" />
+  <div class="has-error">
+    <input type="password" [(ngModel)]="password" name="password" placeholder="Password" class="input textbox rounded" />
+    <div *ngIf="error" class="error">Please enter a valid value.</div>
   </div>
   <div>
-    <input type="submit" value="Sign up / Log in" />
+    <button class="input button bg-green rounded" type="submit"><b>Sign up / Log in</b></button>
   </div>
-  <p>
+  <p class="disclaimer text-medium">
     By signing up, you agree to the Terms of Service and Privacy Policy, including Cookie Use. Others will be able to find you by searching for your email address or phone number when provided.
   </p>
 </form>

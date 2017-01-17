@@ -1,4 +1,20 @@
-.header {
-  border-bottom: solid 1px #ccd6dd;
+.login-form {
+  padding:0 1em;
 }
 
+.disclaimer {
+  color:#647787;
+}
+
+.has-error {
+  position:relative;
+}
+
+.error {
+  font-size:1.75rem;
+  color:#cc3333;
+  position:absolute;
+  top:1.5em;
+  left:1em;
+  font-weight:bold;
+}

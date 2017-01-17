@@ -4,16 +4,18 @@ import * as io from 'socket.io-client';
 
 import { AuthService } from './auth.service';
 import { Config } from './app.config';
+import { User } from './user';
 
 @Component({
   selector: 'chat',
   templateUrl: 'chat.component.html',
-  styleUrls: [ 'assets/css/index.css', 'assets/css/chat.component.css' ]
+  styleUrls: [ 'assets/css/chat.component.css' ]
 })
 export class ChatComponent implements OnInit {
   messages: any[] = [ ];
   message: string;
   socket: any;
+  user: User;
 
   constructor(private router: Router, private auth: AuthService) {
     // initialize socket connection
@@ -23,6 +25,7 @@ export class ChatComponent implements OnInit {
   ngOnInit() {
     // logged in user
     this.auth.me().then((res) => {
+      this.user = res;
       // if no logged in user
       if (!res || !res._id) {
         // redirect to login page

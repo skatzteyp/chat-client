@@ -7,7 +7,6 @@ module.exports = {
     {
 			match : [ "app/**/*.html" ],
 			fn : function(e, file) {
-        console.log('html');
         var filename = file.replace('app', '');
         return fs.copySync(file, './public' + filename);
 			}

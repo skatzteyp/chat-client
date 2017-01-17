@@ -1,3 +1,79 @@
-div {
-  color:blue;
+.logout {
+  position:absolute;
+  right:1rem;
+}
+
+.message-list {
+  position: relative;
+  height:600px;
+  overflow-y:scroll;
+}
+
+.message {
+  margin-bottom:2rem;
+
+  .body {
+    color: #fff;
+    border-radius: .6rem;
+    margin: 0 1rem;
+    padding: 1rem;
+    position: relative;
+  }
+
+  .body:before {
+      width: 0;
+      height: 0;
+      border-top: 0.6rem solid transparent;
+      border-bottom: 0.6rem solid transparent;
+      margin-top:-1em;
+
+      bottom: 1.4rem;
+      content: " ";
+      position: absolute;
+  }
+
+  .sender {
+    color:#647787;
+    margin:0 1rem;
+  }
+
+  &.from {
+    .body {
+      margin-left:20%;
+    }
+    .body:before {
+      border-left: 0.6em solid #88e306;
+      right: -0.5rem;
+    }
+    .sender {
+      text-align:right;
+    }
+  }
+
+  &.to {
+    .body {
+      margin-right: 20%;
+    }
+    .body:before {
+      border-right: 0.6rem solid #88e306;
+      left: -0.5rem;
+    }
+    .sender {
+      text-align:left;
+    }
+  }
+}
+
+.chat-form {
+  border-top:solid 2px #ccd6dd;
+}
+
+.left-col {
+    overflow: hidden;
+    padding:0 1rem;
+}
+
+.right-col {
+    float: right;
+    width: 6rem;
 }

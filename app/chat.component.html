@@ -1,15 +1,22 @@
-<div>
-  Chat app
-  <button (click)="logout()">Log out</button>
+<div class="header text-large text-center">
+  <b class="text-large ">Chat app</b>
+  <button class="input inline button bg-grey rounded logout" (click)="logout()">Log out</button>
 </div>
-<div>
-  <div *ngFor="let message of messages">
-    {{ message.user.username }}:
-    {{ message.body }}
+<div #messageWrapper [scrollTop]="messageWrapper.scrollHeight" class="message-list">
+  <div *ngFor="let message of messages" class="message text-medium" [ngClass]="{ 'from' : message.user._id == user._id, 'to' : message.user._id != user._id }">
+    <div class="body bg-green">
+      {{ message.body }}
+    </div>
+    <div class="sender">
+      {{ message.user.username }}
+    </div>
   </div>
 </div>
-<div>
-  <form (submit)="send()">
-    <input type="text" [(ngModel)]="message" name="message" /> <input type="submit" value="Send" [disabled]="!message" />
-  </form>
-</div>
+<form (submit)="send()" class="chat-form">
+  <div class="right-col">
+    <input class="input inline button rounded bg-grey" type="submit" value="Send" [disabled]="!message" />
+  </div>
+  <div class="left-col">
+    <input class="input textbox rounded inline" placeholder="Start a new message" type="text" [(ngModel)]="message" name="message" />
+  </div>
+</form>
